@@ -81,19 +81,19 @@ document.addEventListener('DOMContentLoaded', () => {
     { 
       nombre: "CAFÉ BOTÁNICO", 
       tipo: "BRANDING & WEB DESIGN",
-      img: "img/cafe.avif", // Usando tu imagen
+      img: "img/diseno-web-restaurantes-trinidad-cuba.avif", // Usando tu imagen
       desc: "Diseño de identidad minimalista y carta digital QR para restaurante de alta cocina." 
     },
     { 
       nombre: "NEXUS DASHBOARD", 
       tipo: "SAAS / SOFTWARE",
-      img: "img/nexu.avif", // Usando tu imagen
+      img: "img/software-gestion-mipymes-santa-clara.avif", // Usando tu imagen
       desc: "Interfaz administrativa (Dark Mode) para visualización de datos en tiempo real." 
     },
     { 
       nombre: "AURA REAL ESTATE", 
       tipo: "DESARROLLO WEB",
-      img: "img/aura.avif", // Usando tu imagen
+      img: "img/marketing-inmobiliario-cienfuegos.avif", // Usando tu imagen
       desc: "Plataforma inmobiliaria con filtrado avanzado de propiedades y recorridos virtuales." 
     }
   ];
@@ -182,5 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
 
 });
