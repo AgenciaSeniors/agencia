@@ -76,24 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // 5. GENERADOR DE PROYECTOS (CON TUS IMÁGENES REALES)
+  // 5. GENERADOR DE PROYECTOS (OPTIMIZADO PARA SEO)
   const proyectos = [
     { 
       nombre: "CAFÉ BOTÁNICO", 
       tipo: "BRANDING & WEB DESIGN",
-      img: "img/diseno-web-restaurantes-trinidad-cuba.avif", // Usando tu imagen
+      img: "img/cafe.avif", 
+      // El "alt" es lo que Google lee:
+      alt: "Diseño de menú digital para restaurante en Trinidad Cuba", 
       desc: "Diseño de identidad minimalista y carta digital QR para restaurante de alta cocina." 
     },
     { 
       nombre: "NEXUS DASHBOARD", 
       tipo: "SAAS / SOFTWARE",
-      img: "img/software-gestion-mipymes-santa-clara.avif", // Usando tu imagen
+      img: "img/nexu.avif", 
+      alt: "Software de gestión de inventarios para MIPYMES en Santa Clara",
       desc: "Interfaz administrativa (Dark Mode) para visualización de datos en tiempo real." 
     },
     { 
       nombre: "AURA REAL ESTATE", 
       tipo: "DESARROLLO WEB",
-      img: "img/marketing-inmobiliario-cienfuegos.avif", // Usando tu imagen
+      img: "img/aura.avif", 
+      alt: "Página web para inmobiliaria y renta de casas en Cienfuegos",
       desc: "Plataforma inmobiliaria con filtrado avanzado de propiedades y recorridos virtuales." 
     }
   ];
@@ -182,5 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
 
 });
