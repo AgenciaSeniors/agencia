@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { 
       nombre: "CAFÉ BOTÁNICO", 
       tipo: "BRANDING & WEB DESIGN",
-      img: "img/cafe.avif", 
+      img: "img/diseno-web-restaurantes-trinidad-cuba.avif", 
       // El "alt" es lo que Google lee:
       alt: "Diseño de menú digital para restaurante en Trinidad Cuba", 
       desc: "Diseño de identidad minimalista y carta digital QR para restaurante de alta cocina." 
@@ -89,14 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
     { 
       nombre: "NEXUS DASHBOARD", 
       tipo: "SAAS / SOFTWARE",
-      img: "img/nexu.avif", 
+      img: "img/software-gestion-mipymes-santa-clara.avif", 
       alt: "Software de gestión de inventarios para MIPYMES en Santa Clara",
       desc: "Interfaz administrativa (Dark Mode) para visualización de datos en tiempo real." 
     },
     { 
       nombre: "AURA REAL ESTATE", 
       tipo: "DESARROLLO WEB",
-      img: "img/aura.avif", 
+      img: "img/marketing-inmobiliario-cienfuegos.avif", 
       alt: "Página web para inmobiliaria y renta de casas en Cienfuegos",
       desc: "Plataforma inmobiliaria con filtrado avanzado de propiedades y recorridos virtuales." 
     }
@@ -189,5 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
 
 
