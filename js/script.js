@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // loading="lazy" es muy importante para que cargue rápido en Cuba
       card.innerHTML = `
-        <img src="${p.img}" alt="${p.nombre}" loading="lazy">
+        <img src="${p.img}" alt="${p.alt}" loading="lazy">
         <div class="project-info">
           <h4 style="font-family:'Playfair Display', serif; color:#FFFFFF; margin-bottom:5px;">${p.nombre}</h4>
           <p style="color:#888; font-size: 13px; line-height: 1.5;">${p.desc}</p>
@@ -189,3 +189,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+
