@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. ANIMACIÓN DE ENTRADA (INTERSECTION OBSERVER)
+  // 4. ANIMACIÓN DE ENTRADA (REVEAL)
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -76,47 +76,34 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  const grid = document.getElementById('projectsGrid');
-  if(grid) {
-    grid.innerHTML = ''; 
-    proyectos.forEach((p, index) => {
-      const card = document.createElement('div');
-      card.className = 'project reveal';
-      card.style.transitionDelay = `${index * 100}ms`; 
-      
-      // loading="lazy" es muy importante para que cargue rápido en Cuba
-      card.innerHTML = `
-        <img src="${p.img}" alt="${p.nombre}" loading="lazy" width="400" height="250" style="width:100%; height:auto; aspect-ratio: 16/9;">
-        <div class="project-info">
-          <h4 style="font-family:'Playfair Display', serif; color:#FFFFFF; margin-bottom:5px;">${p.nombre}</h4>
-          <p style="color:#888; font-size: 13px; line-height: 1.5;">${p.desc}</p>
-          <div class="tag-demo">${p.tipo} (DEMO)</div>
-        </div>
-      `;
-      grid.appendChild(card);
-      observer.observe(card); 
-    });
-  }
-
-  // 6. MODALES
+  // 5. MODALES DE SERVICIOS (Lógica Corregida)
   const modalContainer = document.getElementById('modal-container');
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
   const modalBtn = document.querySelector('.btn-modal');
   const closeModalBtn = document.querySelector('.close-modal');
 
+  // Textos persuasivos actualizados (Copywriting)
   const serviceDetails = {
-    "DESARROLLO WEB": "No es solo una página, es tu mejor vendedor. Creamos sitios que cargan rápido en celulares, aparecen en Google y convencen a las visitas.",
-    "MARKETING & ADS": "Dejar de gastar dinero en volantes. Usamos segmentación para mostrar tus anuncios a personas que buscan lo que vendes.",
-    "IDENTIDAD DE MARCA": "Tu imagen es lo primero que ven. Diseñamos logotipos que hacen que tu negocio se vea profesional y caro.",
-    "AUTOMATIZACIÓN": "Ahorra horas. Creamos programas que contestan mensajes u organizan pedidos automáticamente."
+    "DESARROLLO WEB": "No es solo una página, es tu mejor vendedor. Creamos sitios que cargan rápido en celulares (2G/3G), aparecen primero en Google y convencen a las visitas de comprar.",
+    "MARKETING & ADS": "Deja de tirar dinero en volantes. Usamos segmentación avanzada en Facebook e Instagram para mostrar tus anuncios solo a personas que buscan lo que vendes.",
+    "IDENTIDAD DE MARCA": "Tu imagen es lo primero que ven. Diseñamos logotipos y manuales de identidad que hacen que tu negocio se vea profesional, caro y confiable.",
+    "AUTOMATIZACIÓN": "Ahorra horas de trabajo. Creamos programas que contestan mensajes automáticamente, organizan tus pedidos y actualizan tu inventario sin que tú muevas un dedo."
   };
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       const titleElement = card.querySelector('h4');
       if(titleElement) {
-        const title = titleElement.innerText;
+        // CORRECCIÓN TÉCNICA: .trim() limpia los espacios invisibles del HTML
+        // y .split('\n')[0] se asegura de ignorar el texto oculto del span si se colara.
+        let title = titleElement.innerText.trim();
+        
+        // Limpieza extra por si acaso el navegador trae el texto oculto
+        if(title.includes('\n')) {
+            title = title.split('\n')[0].trim();
+        }
+
         if(serviceDetails[title]){
           modalTitle.innerText = title;
           modalDesc.innerText = serviceDetails[title];
@@ -147,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target == modalContainer) closeModal();
   });
 
-  // 7. FAQ ACORDEÓN
+  // 6. FAQ ACORDEÓN
   document.querySelectorAll('.faq-item').forEach(faq => {
     const question = faq.querySelector('.faq-question');
     const answer = faq.querySelector('.faq-answer');
@@ -161,8 +148,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
 });
-
-
-
