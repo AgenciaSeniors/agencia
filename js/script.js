@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(raf);
 
   // Scroll suave para enlaces del menú
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]:not(.btn-modal)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
       lenis.scrollTo(this.getAttribute('href'));
