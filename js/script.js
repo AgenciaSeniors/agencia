@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   requestAnimationFrame(raf);
 
-  // Scroll suave para enlaces del menú
+  // Scroll suave para enlaces del menú (EXCLUYENDO el botón del modal para que funcione WhatsApp)
   document.querySelectorAll('a[href^="#"]:not(.btn-modal)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
-  // 5. MODALES DE SERVICIOS (Lógica Corregida)
+  // 5. MODALES DE SERVICIOS (LÓGICA BLINDADA)
   const modalContainer = document.getElementById('modal-container');
   const modalTitle = document.getElementById('modal-title');
   const modalDesc = document.getElementById('modal-desc');
   const modalBtn = document.querySelector('.btn-modal');
   const closeModalBtn = document.querySelector('.close-modal');
 
-  // Textos persuasivos actualizados (Copywriting)
+  // Textos persuasivos (Copywriting mejorado)
   const serviceDetails = {
     "DESARROLLO WEB": "No es solo una página, es tu mejor vendedor. Creamos sitios que cargan rápido en celulares (2G/3G), aparecen primero en Google y convencen a las visitas de comprar.",
     "MARKETING & ADS": "Deja de tirar dinero en volantes. Usamos segmentación avanzada en Facebook e Instagram para mostrar tus anuncios solo a personas que buscan lo que vendes.",
@@ -95,11 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       const titleElement = card.querySelector('h4');
       if(titleElement) {
-        // CORRECCIÓN TÉCNICA: .trim() limpia los espacios invisibles del HTML
-        // y .split('\n')[0] se asegura de ignorar el texto oculto del span si se colara.
+        // CORRECCIÓN CLAVE: Limpiamos espacios y textos ocultos para que coincida siempre
         let title = titleElement.innerText.trim();
         
-        // Limpieza extra por si acaso el navegador trae el texto oculto
+        // Si el navegador trae el texto del span oculto (sr-only), lo quitamos
         if(title.includes('\n')) {
             title = title.split('\n')[0].trim();
         }
@@ -107,13 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if(serviceDetails[title]){
           modalTitle.innerText = title;
           modalDesc.innerText = serviceDetails[title];
+          
+          // Enlace dinámico a WhatsApp
           if(modalBtn) modalBtn.href = `https://wa.me/5356621636?text=Hola,%20me%20interesa%20saber%20más%20sobre%20${encodeURIComponent(title)}.`;
           
           modalContainer.style.display = 'flex';
           requestAnimationFrame(() => {
              modalContainer.classList.add('show');
           });
-          lenis.stop(); // Pausar scroll fondo
+          lenis.stop(); // Pausar scroll del fondo
         }
       }
     });
@@ -124,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContainer.classList.remove('show');
         setTimeout(() => { 
           modalContainer.style.display = 'none'; 
-          lenis.start(); // Reactivar scroll fondo
+          lenis.start(); // Reactivar scroll
         }, 300);
     }
   }
