@@ -33,8 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YKF7LR287"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YKF7LR287"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -274,15 +273,13 @@
     Sin intermediarios ni esperas. Elige tu canal preferido y hablemos de negocios.
   </p>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+  <div class="contact-grid">
     
-    <div style="background: #111; border: 1px solid #333; padding: 40px 30px; border-radius: 8px; width: 100%; max-width: 350px; transition: transform 0.3s;" onmouseover="this.style.borderColor='#D4AF37'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#333'; this.style.transform='translateY(0)'">
-      <div style="font-size: 40px; margin-bottom: 20px;">🚀</div>
-      <h4 style="color: white; font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 20px;">Respuesta Inmediata</h4>
-      <p style="color: #999; font-size: 13px; line-height: 1.6; margin-bottom: 25px;">
-        La forma más rápida de cotizar. Ideal para dudas puntuales y agendar reuniones.
-      </p>
-      <a href="https://wa.me/5356621636?text=Hola%20Señores,%20quiero%20llevar%20mi%20negocio%20al%20siguiente%20nivel." target="_blank" class="btn" style="background: #25D366; color: white; width: 100%; border: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);">
+    <div class="contact-card card-whatsapp">
+      <div class="contact-icon">🚀</div>
+      <h4>Respuesta Inmediata</h4>
+      <p>La forma más rápida de cotizar. Ideal para dudas puntuales y agendar reuniones.</p>
+      <a href="https://wa.me/5356621636?text=Hola%20Señores,%20quiero%20llevar%20mi%20negocio%20al%20siguiente%20nivel." target="_blank" class="btn-card btn-whatsapp">
         ABRIR WHATSAPP
       </a>
       <div style="background: #111; border: 1px solid #333; padding: 40px 30px; border-radius: 8px; width: 100%; max-width: 350px; transition: transform 0.3s;" onmouseover="this.style.borderColor='#E1306C'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#333'; this.style.transform='translateY(0)'">
@@ -297,20 +294,36 @@
     </div>
     </div>
 
-    <div style="background: #111; border: 1px solid #333; padding: 40px 30px; border-radius: 8px; width: 100%; max-width: 350px; transition: transform 0.3s;" onmouseover="this.style.borderColor='#fff'; this.style.transform='translateY(-5px)'" onmouseout="this.style.borderColor='#333'; this.style.transform='translateY(0)'">
-      <div style="font-size: 40px; margin-bottom: 20px;">✉️</div>
-      <h4 style="color: white; font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 20px;">Propuesta Formal</h4>
-      <p style="color: #999; font-size: 13px; line-height: 1.6; margin-bottom: 25px;">
-        ¿Tienes un proyecto complejo? Envíanos los detalles y te responderemos en 24h.
-      </p>
-      <a href="mailto:seniors.contacto@gmail.com" class="btn" style="background: transparent; border: 1px solid #666; color: white; width: 100%;">
+    <div class="contact-card card-email">
+      <div class="contact-icon">✉️</div>
+      <h4>Propuesta Formal</h4>
+      <p>¿Tienes un proyecto complejo? Envíanos los detalles y te responderemos en 24h.</p>
+      <a href="mailto:seniors.contacto@gmail.com" class="btn-card btn-email">
         ENVIAR CORREO
+      </a>
+    </div>
+
+    <div class="contact-card card-instagram">
+      <div class="contact-icon">📸</div>
+      <h4>Nuestro Portafolio</h4>
+      <p>Mira nuestros últimos diseños y casos de éxito reales en el sector privado.</p>
+      <a href="https://instagram.com/agency_seniors" target="_blank" class="btn-card btn-instagram">
+        VER INSTAGRAM
+      </a>
+    </div>
+
+    <div class="contact-card card-facebook">
+      <div class="contact-icon">👍</div>
+      <h4>Comunidad</h4>
+      <p>Síguenos en Facebook para noticias y consejos sobre negocios en Cuba.</p>
+      <a href="https://www.facebook.com/share/1D3gRoWgpr/" target="_blank" class="btn-card btn-facebook">
+        VER FACEBOOK
       </a>
     </div>
 
   </div>
   
-  <div style="margin-top: 60px; border-top: 1px solid #222; padding-top: 40px;">
+  <div class="contact-footer">
     <p style="color: #666; font-size: 12px; letter-spacing: 1px; text-transform: uppercase;">
       HORARIO DE ATENCIÓN: LUNES A VIERNES • 9:00 AM - 6:00 PM
     </p>
@@ -357,6 +370,3 @@
 
 </body>
 </html>
-
-
-

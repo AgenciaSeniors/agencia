@@ -186,7 +186,7 @@ h3 {
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
 }
 
-/* --- PROYECTOS --- */
+/* --- PROYECTOS (ESTILOS LEGACY) --- */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .project { 
   background: #111; border-radius: 4px; padding: 20px; 
@@ -340,3 +340,98 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
   .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
 }
 
+/* =========================================
+   TARJETAS DE CONTACTO (NUEVO)
+   ========================================= */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px; /* Espacio entre tarjetas */
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: #111;
+  border: 1px solid #333;
+  padding: 40px 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 280px; /* Tamaño ideal para que quepan 3-4 en fila */
+  transition: transform 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-card h4 {
+  color: white;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.contact-card p {
+  color: #999;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-card {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Colores Específicos por Red Social */
+
+/* WhatsApp */
+.card-whatsapp:hover { border-color: #25D366; }
+.btn-whatsapp { background: #25D366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2); }
+.btn-whatsapp:hover { background: #1ebc57; }
+
+/* Email */
+.card-email:hover { border-color: #fff; }
+.btn-email { background: transparent; border: 1px solid #666; color: white; }
+.btn-email:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+/* Instagram */
+.card-instagram:hover { border-color: #E1306C; }
+.btn-instagram { 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  color: white; 
+  box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3); 
+}
+.btn-instagram:hover { opacity: 0.9; }
+
+/* Facebook */
+.card-facebook:hover { border-color: #1877F2; }
+.btn-facebook { background: #1877F2; color: white; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); }
+.btn-facebook:hover { background: #166fe5; }
+
+/* Pie de la sección contacto */
+.contact-footer {
+  margin-top: 60px;
+  border-top: 1px solid #222;
+  padding-top: 40px;
+}
