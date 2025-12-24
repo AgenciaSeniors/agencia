@@ -441,7 +441,7 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
 .selection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajuste para móviles */
-  gap: 40px;
+  gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -523,4 +523,23 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-weight: 500;
+}
+@media (max-width: 768px) {
+  .selection-img-container {
+    aspect-ratio: 1/1; /* En móviles, las imágenes cuadradas funcionan mejor */
+  }
+
+  /* Hacemos el botón siempre visible en móvil porque no hay 'hover' con ratón */
+  .overlay {
+    opacity: 1;
+    background: rgba(0,0,0,0.2);
+    align-items: flex-end;
+    padding-bottom: 20px;
+  }
+
+  .btn-ver-menu {
+    padding: 8px 16px;
+    font-size: 10px;
+    background: rgba(10, 10, 10, 0.95);
+  }
 }
