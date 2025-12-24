@@ -46,15 +46,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 3. MENÚ MÓVIL
-  const menuBtn = document.querySelector('.menu-btn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if(menuBtn) {
-    menuBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.style.display === 'flex';
-      mobileMenu.style.display = isOpen ? 'none' : 'flex';
-      menuBtn.innerHTML = isOpen ? '✕' : '☰';
-    });
-  }
+  // Busca la parte de MENÚ MÓVIL y reemplázala
+const menuBtn = document.querySelector('.menu-btn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if(menuBtn && mobileMenu) {
+  menuBtn.addEventListener('click', () => {
+    // Alternamos una clase en lugar de cambiar el estilo directamente
+    mobileMenu.classList.toggle('active'); 
+    
+    const isActive = mobileMenu.classList.contains('active');
+    mobileMenu.style.display = isActive ? 'flex' : 'none'; // Mantenemos compatibilidad con tu CSS
+    menuBtn.innerHTML = isActive ? '✕' : '☰';
+  });
+}
 
   // 4. ANIMACIÓN DE ENTRADA (REVEAL)
   const observerOptions = {
