@@ -152,10 +152,15 @@ nav a:hover::after { width: 100%; }
 
 /* --- SECCIONES GENERALES --- */
 section { padding: 60px 15%; }
-h3 { 
-  font-size: 32px; margin-bottom: 50px; 
-  font-family: 'Playfair Display', serif; color:var(--blanco-puro); 
-  text-align: center; letter-spacing: 2px; text-transform: uppercase; 
+h2 { 
+  font-size: clamp(28px, 4vw, 36px); 
+  margin-bottom: 50px; 
+  font-family: 'Playfair Display', serif; 
+  color: var(--blanco-puro); 
+  text-align: center; 
+  letter-spacing: 2px; 
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 /* --- PROCESO --- */
@@ -182,10 +187,13 @@ h3 {
   cursor: pointer;
 }
 .card-icon svg { width: 42px; height: 42px; fill: var(--dorado-suave); margin-bottom: 20px;}
-.card h4 { 
-  font-family: 'Playfair Display', serif; margin-bottom:12px; 
-  color:var(--blanco-puro); font-size: 18px; 
-  letter-spacing: 0.5px; text-transform: uppercase; 
+.card h3 { 
+  font-family: 'Playfair Display', serif; 
+  margin-bottom: 12px; 
+  color: var(--blanco-puro); 
+  font-size: 1.1rem; /* Tamaño contenido para que no desborde */
+  letter-spacing: 0.5px; 
+  text-transform: uppercase; 
 }
 .card p { color:#aaa; font-size:14px; line-height:1.6; }
 .card:hover { 
@@ -517,13 +525,21 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
   padding: 0 10px;
 }
 
-.selection-info h4 {
+.selection-info h3 {
   color: #fff;
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
+  font-size: 18px; /* Reducido un poco para evitar el desborde */
   letter-spacing: 1px;
   margin-bottom: 8px;
   text-transform: uppercase;
+}
+#selection div > span {
+  color: var(--dorado-suave);
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
 }
 
 .selection-info p {
