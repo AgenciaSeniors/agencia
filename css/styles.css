@@ -552,3 +552,30 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
     background: rgba(10, 10, 10, 0.95);
   }
 }
+/* Corregir Títulos de Secciones (H2 que deben verse como H3) */
+section h2, 
+#proceso h2, 
+#servicios h2, 
+#valor h2, 
+#selection h2 {
+    font-size: clamp(24px, 4vw, 32px) !important; /* Ajusta el tamaño de la sección */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* Corregir Títulos de Tarjetas (H3 que deben verse como H4) */
+.services .card h3, 
+.selection-info h3 {
+    font-size: 1.2rem !important; /* Tamaño contenido para la tarjeta */
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: block;
+    overflow: hidden; /* Evita que el texto se salga si es muy largo */
+    text-overflow: ellipsis;
+}
+
+/* Ajuste específico para THE SELECTION */
+#selection span {
+    display: block;
+    margin-bottom: 5px;
+}
