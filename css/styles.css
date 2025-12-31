@@ -98,47 +98,60 @@ nav a:hover::after { width: 100%; }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 7)); } }
 
 /* --- SECCIONES GENERALES --- */
-section { padding: 60px 15%; }
-h2 { font-size: clamp(24px, 4vw, 32px); margin-bottom: 50px; font-family: 'Playfair Display', serif; color: var(--blanco-puro); text-align: center; letter-spacing: 2px; text-transform: uppercase; line-height: 1.2; }
+/* Aumentado el padding vertical de 60px a 100px para mayor espacio entre secciones */
+section { padding: 100px 15%; } 
+
+/* Aumentado el margen inferior de los h2 de 50px a 80px para separar el título de las tarjetas */
+h2 { 
+  font-size: clamp(24px, 4vw, 32px); 
+  margin-bottom: 80px; 
+  font-family: 'Playfair Display', serif; 
+  color: var(--blanco-puro); 
+  text-align: center; 
+  letter-spacing: 2px; 
+  text-transform: uppercase; 
+  line-height: 1.2; 
+}
 
 /* =========================================
-   ACTUALIZADO: SECCIÓN PROCESO
+   SECCIÓN: ¿CÓMO TRABAJAMOS? (PROCESO)
    ========================================= */
 .process-container { display: flex; flex-wrap: wrap; gap: 20px; }
 .step-card { 
-  flex: 1; min-width: 250px; background: #121212; padding: 35px 30px; 
+  flex: 1; min-width: 250px; background: #121212; padding: 40px 30px; 
   border-radius: 4px; border: 1px solid #222; position: relative; 
   transition: transform 0.4s ease; overflow: hidden; 
 }
 .step-card:hover { transform: translateY(-5px); border-color: var(--dorado-suave); }
 
+/* Número como marca de agua sutil */
 .step-number { 
-  font-size: 100px; color: rgba(212, 175, 55, 0.05); font-weight: 900; 
-  position: absolute; top: -10px; right: -5px; z-index: 1; pointer-events: none; 
+  font-size: 110px; color: rgba(212, 175, 55, 0.05); font-weight: 900; 
+  position: absolute; top: -15px; right: -10px; z-index: 1; pointer-events: none; 
 }
 
-/* Corregido selector h3 (antes h4) */
+/* Título corregido (de h4 a h3 según HTML) */
 .step-card h3 { 
-  color: var(--dorado-suave); margin-bottom: 12px; font-family: 'Playfair Display', serif; 
+  color: var(--dorado-suave); margin-bottom: 15px; font-family: 'Playfair Display', serif; 
   font-size: 1.25rem; text-transform: uppercase; position: relative; z-index: 2; letter-spacing: 1px; 
 }
-.step-card p { color: #888; font-size: 14px; line-height: 1.6; position: relative; z-index: 2; }
+.step-card p { color: #888; font-size: 14px; line-height: 1.7; position: relative; z-index: 2; }
 
 /* --- SERVICES --- */
 .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
-.card { padding: 35px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border-radius: 4px; border: 1px solid var(--gris-grafito); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; }
-.card-icon svg { width: 42px; height: 42px; fill: var(--dorado-suave); margin-bottom: 20px;}
-.card h3 { font-family: 'Playfair Display', serif; margin-bottom: 12px; color: var(--blanco-puro); font-size: 1.1rem; letter-spacing: 0.5px; text-transform: uppercase; }
-.card p { color:#aaa; font-size:14px; line-height:1.6; }
-.card:hover { border-color: var(--dorado-suave); transform: translateY(-10px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+.card { padding: 40px 35px; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border-radius: 4px; border: 1px solid var(--gris-grafito); transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; }
+.card-icon svg { width: 42px; height: 42px; fill: var(--dorado-suave); margin-bottom: 25px;}
+.card h3 { font-family: 'Playfair Display', serif; margin-bottom: 15px; color: var(--blanco-puro); font-size: 1.15rem; letter-spacing: 0.5px; text-transform: uppercase; }
+.card p { color:#aaa; font-size:14px; line-height:1.7; }
+.card:hover { border-color: var(--dorado-suave); transform: translateY(-10px); background: rgba(255, 255, 255, 0.05); box-shadow: 0 15px 35px -10px rgba(0,0,0,0.6); }
 
 /* =========================================
-   ACTUALIZADO: THE SELECTION (MÁS PEQUEÑOS)
+   THE SELECTION (MÁS COMPACTO)
    ========================================= */
 .selection-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-  gap: 25px; max-width: 900px; margin: 0 auto;
+  gap: 30px; max-width: 950px; margin: 0 auto;
 }
 
 .selection-card { text-decoration: none; display: block; position: relative; }
@@ -150,27 +163,27 @@ h2 { font-size: clamp(24px, 4vw, 32px); margin-bottom: 50px; font-family: 'Playf
 .selection-card:hover .overlay { opacity: 1; }
 .btn-ver-menu { color: var(--dorado-suave); border: 1px solid var(--dorado-suave); padding: 10px 20px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(4px); font-weight: 600; }
 
-.selection-info { margin-top: 15px; text-align: center; }
-.selection-info h3 { color: #fff; font-family: 'Playfair Display', serif; font-size: 16px; letter-spacing: 0.5px; margin-bottom: 5px; text-transform: uppercase; }
+.selection-info { margin-top: 20px; text-align: center; }
+.selection-info h3 { color: #fff; font-family: 'Playfair Display', serif; font-size: 16px; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase; }
 .selection-info p { color: #666; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; }
 
 /* --- FAQ --- */
 .faq-item { border-bottom: 1px solid #222; margin-bottom: 10px; }
-.faq-question { width: 100%; background: transparent; border: none; padding: 20px 0; text-align: left; font-size: 16px; color: var(--blanco-puro); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+.faq-question { width: 100%; background: transparent; border: none; padding: 25px 0; text-align: left; font-size: 16px; color: var(--blanco-puro); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
 .faq-question:hover { color: var(--dorado-suave); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.faq-answer p { color: #999; padding-bottom: 20px; line-height: 1.6; font-size: 14px; }
+.faq-answer p { color: #999; padding-bottom: 25px; line-height: 1.7; font-size: 14px; }
 .arrow { font-size: 12px; transition: 0.3s; }
 .faq-item.active .arrow { transform: rotate(180deg); color: var(--dorado-suave); }
 
 /* --- CONTACTO --- */
-.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 40px; }
-.contact-card { background: #111; border: 1px solid #333; padding: 40px 30px; border-radius: 8px; width: 100%; max-width: 280px; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; align-items: center; }
+.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 50px; }
+.contact-card { background: #111; border: 1px solid #333; padding: 45px 30px; border-radius: 8px; width: 100%; max-width: 280px; transition: transform 0.3s, border-color 0.3s; display: flex; flex-direction: column; align-items: center; }
 .contact-card:hover { transform: translateY(-5px); }
 .contact-icon { font-size: 40px; margin-bottom: 20px; }
-.contact-card h3 { color: white; font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 18px; }
-.contact-card p { color: #999; font-size: 13px; line-height: 1.6; margin-bottom: 25px; text-align: center; }
-.btn-card { width: 100%; border: none; border-radius: 4px; padding: 12px; font-weight: 700; font-size: 12px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; text-align: center; transition: all 0.3s ease; cursor: pointer; }
+.contact-card h3 { color: white; font-family: 'Playfair Display', serif; margin-bottom: 12px; font-size: 18px; }
+.contact-card p { color: #999; font-size: 13px; line-height: 1.7; margin-bottom: 30px; text-align: center; }
+.btn-card { width: 100%; border: none; border-radius: 4px; padding: 13px; font-weight: 700; font-size: 12px; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; text-align: center; transition: all 0.3s ease; cursor: pointer; }
 
 .card-whatsapp:hover { border-color: #25D366; }
 .btn-whatsapp { background: #25D366; color: white; }
@@ -182,10 +195,10 @@ h2 { font-size: clamp(24px, 4vw, 32px); margin-bottom: 50px; font-family: 'Playf
 .btn-facebook { background: #1877F2; color: white; }
 
 /* --- FOOTER & MISC --- */
-footer { padding: 40px 5%; background: var(--negro-carbon); border-top: 1px solid var(--gris-grafito); text-align: center; }
+footer { padding: 60px 5%; background: var(--negro-carbon); border-top: 1px solid var(--gris-grafito); text-align: center; }
 footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px;}
 
-.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; border-radius: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 4px 15px rgba(0,0,0,0.4); z-index: 1000; animation: pulse 2s infinite; }
+.whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25D366; border-radius: 50px; display: flex; justify-content: center; align-items: center; box-shadow: 0px 4px 15px rgba(0,0,0,0.5); z-index: 1000; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
 
 .reveal { opacity: 0; transform: translateY(60px) scale(0.98); transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: transform, opacity; }
@@ -194,11 +207,12 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
 
 /* --- RESPONSIVE --- */
 @media(max-width: 768px) {
-  section { padding: 60px 8%; }
+  section { padding: 80px 8%; } /* Padding ligeramente menor en móvil */
+  h2 { margin-bottom: 60px; }
   .menu-btn { display: block; }
   nav { display: none; }
   .hero h1 { font-size: 38px; }
-  .step-number { font-size: 70px; }
+  .step-number { font-size: 80px; }
   .step-card h3 { font-size: 1.15rem; }
   .selection-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
   .overlay { opacity: 1; background: rgba(0,0,0,0.2); align-items: flex-end; padding-bottom: 15px; }
