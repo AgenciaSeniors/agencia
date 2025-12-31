@@ -320,3 +320,157 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
     width: 95%; 
   }
 }
+/* =========================================
+   1. TECH STACK (SLIDER ANIMADO)
+   ========================================= */
+.tech-stack { 
+  padding: 40px 0; 
+  background: #080808; 
+  border-top: 1px solid #151515; 
+  border-bottom: 1px solid #151515; 
+  overflow: hidden; 
+  width: 100%; 
+}
+.slider { width: 100%; overflow: hidden; position: relative; }
+.slide-track { 
+  display: flex; 
+  /* Ancho total: (ancho de cada slide * total de slides) */
+  width: calc(250px * 14); 
+  animation: scroll 40s linear infinite; 
+}
+.slide { 
+  width: 250px; 
+  font-family: 'Playfair Display', serif; 
+  font-size: 18px; 
+  color: #444; 
+  font-weight: 700; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  letter-spacing: 2px;
+}
+
+/* Animación de desplazamiento infinito */
+@keyframes scroll { 
+  0% { transform: translateX(0); } 
+  100% { transform: translateX(calc(-250px * 7)); } 
+}
+
+/* =========================================
+   2. PREGUNTAS FRECUENTES (FAQ)
+   ========================================= */
+#faq { padding-bottom: 100px; }
+.faq-item { 
+  border-bottom: 1px solid #222; 
+  margin-bottom: 5px; 
+}
+.faq-question { 
+  width: 100%; 
+  background: transparent; 
+  border: none; 
+  padding: 25px 0; 
+  text-align: left; 
+  font-size: 15px; 
+  color: #fff; 
+  cursor: pointer; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  transition: 0.3s; 
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.faq-question:hover { color: var(--dorado-suave); }
+
+/* Estilo para el contenido desplegable */
+.faq-answer { 
+  max-height: 0; 
+  overflow: hidden; 
+  transition: max-height 0.5s ease; 
+}
+/* Se activa mediante JS añadiendo la clase 'active' al faq-item */
+.faq-item.active .faq-answer { 
+  max-height: 500px; 
+}
+
+.faq-answer p { 
+  color: #888; 
+  padding-bottom: 25px; 
+  line-height: 1.7; 
+  font-size: 14px; 
+}
+.arrow { 
+  font-size: 10px; 
+  transition: transform 0.3s ease; 
+  color: #444;
+}
+.faq-item.active .arrow { 
+  transform: rotate(180deg); 
+  color: var(--dorado-suave); 
+}
+
+/* =========================================
+   3. CONECTA CON NOSOTROS (TARJETAS)
+   ========================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-card {
+  background: #111;
+  border: 1px solid #222;
+  padding: 50px 30px;
+  border-radius: 4px;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: #333;
+}
+.contact-icon { font-size: 45px; margin-bottom: 25px; }
+
+/* Selector h3 corregido para tu HTML */
+.contact-card h3 { 
+  color: #fff; 
+  font-family: 'Playfair Display', serif; 
+  margin-bottom: 15px; 
+  font-size: 1.2rem; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.contact-card p { 
+  color: #777; 
+  font-size: 14px; 
+  line-height: 1.6; 
+  margin-bottom: 30px; 
+}
+
+/* Colores de Hover por tipo de tarjeta */
+.card-whatsapp:hover { border-color: #25D366; }
+.btn-whatsapp { background: #25D366; color: #fff; }
+
+.card-email:hover { border-color: #fff; }
+.btn-email { background: transparent; border: 1px solid #444; color: #fff; }
+
+.card-instagram:hover { border-color: #E1306C; }
+.btn-instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
+
+.card-facebook:hover { border-color: #1877F2; }
+.btn-facebook { background: #1877F2; color: #fff; }
+
+/* Responsive para las tarjetas en móvil */
+@media(max-width: 768px) {
+  .contact-grid { gap: 15px; }
+  .contact-card { padding: 40px 20px; }
+}
