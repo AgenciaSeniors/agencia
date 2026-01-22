@@ -454,3 +454,27 @@ footer p { color:#666; font-size: 12px; letter-spacing: 1px; margin-bottom: 25px
   line-height: 1.8;
   font-size: 14px;
 }
+/* OPTIMIZACIÓN MÓVIL */
+@media (max-width: 768px) {
+  /* Desactivar desenfoque costoso en móviles */
+  header, .card, .modal-container {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Usar fondos sólidos o con transparencia simple como alternativa */
+  header {
+    background: rgba(10, 10, 10, 0.98) !important; /* Casi sólido */
+  }
+  
+  .card {
+    background: #111 !important; /* Fondo sólido en lugar de vidrio */
+    box-shadow: none !important; /* Quitar sombras pesadas */
+    border: 1px solid #333;
+  }
+
+  /* Opcional: Pausar animaciones que no están en pantalla o simplificarlas */
+  .slide-track {
+    will-change: transform; /* Ayuda un poco al navegador */
+  }
+}
