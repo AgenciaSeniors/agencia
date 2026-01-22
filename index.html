@@ -154,7 +154,7 @@
 <header>
   <a href="#hero" class="brand">
     <div class="logo">
-      <img src="img/favicon.png" alt="Agencia Señores: Programadores y Diseño Web en Sancti Spíritus, Villa Clara y Cienfuegos" width="50" height="50" style="width: 50px; height: auto;">
+      <img src="img/favicon.png" alt="Logo" width="50" height="50" style="width: 50px; height: auto;">
     </div>
     <div>
       <div class="wordmark">SEÑORES</div>
@@ -171,7 +171,20 @@
   </nav>
 
   <button class="menu-btn" aria-label="Menú">☰</button>
-</header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero">INICIO</a>
+    <a href="#proceso">CÓMO TRABAJAMOS</a>
+    <a href="#servicios">SERVICIOS</a>
+    <a href="blog.html">BLOG</a>
+    <a href="#contacto">CONTACTO</a>
+  </div>
+
+</header> ```
+
+Haciendo este cambio, cuando el CSS diga `top: 100%`, calculará el 100% de la altura del **header** (unos 80-100px) y pegará el menú justo debajo de la barra negra, que es lo que buscas.
+
+¿Pudiste aplicar también el cambio de CSS para mejorar la velocidad en móviles que te mencioné antes?
 <section class="hero reveal" id="hero">
   <h1 style="font-size: clamp(40px, 5vw, 64px); font-weight: 900; font-family: 'Playfair Display', serif; color:var(--blanco-puro); line-height: 1.1; margin-bottom: 20px;">
     PROGRAMADORES, WEB &<br><span>MARKETING DIGITAL.</span>
