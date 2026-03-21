@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1024" height="1024">
+  <g transform="rotate(45, 256, 256)">
+    <path d="M 222 125 L 110 256 L 222 387 L 222 320 L 160 256 L 222 192 Z" fill="#1047FE"/>
+    <path d="M 290 125 L 402 256 L 290 387 L 290 320 L 352 256 L 290 192 Z" fill="#1047FE"/>
+  </g>
+</svg>
