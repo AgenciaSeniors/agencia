@@ -3,8 +3,8 @@
 # Ejecutar desde la carpeta del proyecto: bash deploy.sh
 
 FTP_HOST="agenciaseniors.com"
-FTP_USER="u282939343"
-FTP_PASS="Edua0523*"
+FTP_USER="${HOSTINGER_FTP_USER:?Define HOSTINGER_FTP_USER antes de ejecutar}"
+FTP_PASS="${HOSTINGER_FTP_PASS:?Define HOSTINGER_FTP_PASS antes de ejecutar}"
 REMOTE_DIR="/public_html"
 
 echo "=== Subiendo sitio a Hostinger ==="
