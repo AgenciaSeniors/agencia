@@ -2,10 +2,18 @@
 # Ejecutar desde PowerShell: .\deploy.ps1
 
 $FTP_HOST = "agenciaseniors.com"
-$FTP_USER = "u282939343"
-$FTP_PASS = "Edua0523*"
+$FTP_USER = $env:HOSTINGER_FTP_USER
+$FTP_PASS = $env:HOSTINGER_FTP_PASS
 $REMOTE_DIR = "/public_html"
 $LOCAL_DIR = $PSScriptRoot
+
+if (-not $FTP_USER -or -not $FTP_PASS) {
+    Write-Host "Faltan las variables de entorno HOSTINGER_FTP_USER y HOSTINGER_FTP_PASS." -ForegroundColor Red
+    Write-Host "Definelas en esta sesion antes de ejecutar:"
+    Write-Host "  `$env:HOSTINGER_FTP_USER = <usuario>"
+    Write-Host "  `$env:HOSTINGER_FTP_PASS = <clave>"
+    exit 1
+}
 
 # Archivos y carpetas a excluir
 $EXCLUDES = @(".git", "deploy.sh", "deploy.ps1", ".gitignore", "README.md", "CLAUDE.md", ".claude")
